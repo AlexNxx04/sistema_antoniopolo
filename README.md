@@ -1,58 +1,35 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚀 Sistema Web para el Control Operativo de Unidades de Transporte Terrestre
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este proyecto de titulación para la **Universidad Estatal de Bolívar** (Cantón Guaranda) consiste en una plataforma web empresarial diseñada para optimizar, auditar y monitorear el flujo logístico y operativo de las unidades de transporte terrestre. El núcleo del sistema se basa en la validación y control geográfico mediante puntos de geolocalización establecidos de manera estratégica en la provincia.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🛠️ Stack Tecnológico & Arquitectura
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+El sistema fue construido siguiendo las mejores prácticas de la ingeniería de software, asegurando modularidad, mantenibilidad y escalabilidad:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+*   **Backend (Core):** Laravel (PHP) bajo el patrón de diseño estricto **Modelo-Vista-Controlador (MVC)**, garantizando una separación clara de la lógica de negocio y las interfaces.
+*   **Frontend y Estilos:** Tailwind CSS y Blade UI, empaquetados e integrados eficientemente a través de **Vite** para lograr tiempos de carga optimizados y una experiencia mobile-first fluida.
+*   **Gestión de Base de Datos:** Motor relacional **SQL** administrado mediante migraciones y seeders nativos de Laravel, aplicando restricciones de integridad (Foreign Keys) y optimización de consultas.
+*   **Modelado del Sistema:** Arquitectura respaldada formalmente mediante diagramación estructural y Casos de Uso integrados directamente en el flujo del repositorio.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📈 Características y Funcionalidades Principales
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+*   **📍 Control por Geolocalización:** Gestión y auditoría de rutas mediante la verificación de unidades en coordenadas y puntos de control previamente establecidos.
+*   **🔒 Seguridad y Roles:** Autenticación robusta y protección de endpoints mediante middlewares nativos contra vulnerabilidades web comunes (CSRF, XSS, inyecciones SQL).
+*   **📊 Migraciones Modulares:** Estructura de base de datos versionada en código, permitiendo la alteración y adición ágil de columnas y llaves foráneas (`add_column.php`, `add_fk.php`).
+*   **🔔 Sistema de Notificaciones Operativas:** Lógica interna optimizada para el procesamiento y corrección de alertas operativas dentro de los grupos de transporte.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+---
 
-## Agentic Development
+## 📁 Guía de Estructura del Repositorio
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+Para facilitar la auditoría técnica del código, los componentes principales se distribuyen de la siguiente manera:
 
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
-```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+*   📂 `/app/Http/Controllers`: Contiene la lógica y el comportamiento de los endpoints y controladores del sistema.
+*   📂 `/app/Models`: Definición de las entidades relacionales y las conexiones de la base de datos.
+*   📂 `/routes`: Definición y enrutamiento limpio de los componentes de la plataforma (`web.php`, `api.php`).
+*   📂 `/database/migrations`: Scripts SQL automatizados para el despliegue ordenado de las tablas del sistema.
+*   📂 `/resources`: Vistas interactivas, componentes Blade y archivos de estilo CSS.
