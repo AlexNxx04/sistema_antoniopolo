@@ -33,8 +33,13 @@ Plataforma (**Web + Progressive Web App**) desarrollada para la **Universidad Es
 bash
 
 git clone https://github.com/AlexNxx04/sistema_antoniopolo.git
+
 cd sistema_antoniopolo
+
 composer install && npm install
+
 cp .env.example .env && php artisan key:generate
+
 php artisan migrate
+
 npm run build && php artisan serve
