@@ -1,35 +1,40 @@
-# 🚀 Sistema Web para el Control Operativo de Unidades de Transporte Terrestre
+#### 🚍 Sistema Web y PWA para el Control Operativo de Unidades de Transporte Terrestre
 
-Este proyecto de titulación para la **Universidad Estatal de Bolívar** (Cantón Guaranda) consiste en una plataforma web empresarial diseñada para optimizar, auditar y monitorear el flujo logístico y operativo de las unidades de transporte terrestre. El núcleo del sistema se basa en la validación y control geográfico mediante puntos de geolocalización establecidos de manera estratégica en la provincia.
+Plataforma (**Web + Progressive Web App**) desarrollada para la **Universidad Estatal de Bolívar** (Cantón Guaranda) para el monitoreo y control en tiempo real de flotas de transporte terrestre con soporte **Offline-First**. 
 
----
+#### 🛠 Stack Tecnológico & Arquitectura
 
-## 🛠️ Stack Tecnológico & Arquitectura
+* **Backend:** Laravel (PHP) con patrón **MVC** y APIs RESTful.
+* **Frontend & PWA:** TypeScript, Blade UI, Tailwind CSS, Service Workers y almacenamiento local empaquetados con **Vite**.
+* **Tiempo Real:** WebSockets para transmisión de estados y geolocalización.
+* **Base de Datos:** Motor relacional **SQL** con migraciones y claves foráneas.
 
-El sistema fue construido siguiendo las mejores prácticas de la ingeniería de software, asegurando modularidad, mantenibilidad y escalabilidad:
+#### 🚀 Características Principales
 
-*   **Backend (Core):** Laravel (PHP) bajo el patrón de diseño estricto **Modelo-Vista-Controlador (MVC)**, garantizando una separación clara de la lógica de negocio y las interfaces.
-*   **Frontend y Estilos:** Tailwind CSS y Blade UI, empaquetados e integrados eficientemente a través de **Vite** para lograr tiempos de carga optimizados y una experiencia mobile-first fluida.
-*   **Gestión de Base de Datos:** Motor relacional **SQL** administrado mediante migraciones y seeders nativos de Laravel, aplicando restricciones de integridad (Foreign Keys) y optimización de consultas.
-*   **Modelado del Sistema:** Arquitectura respaldada formalmente mediante diagramación estructural y Casos de Uso integrados directamente en el flujo del repositorio.
+* **📍 Geolocalización y Modo Offline-First:** Almacenamiento local de coordenadas sin conexión a internet y sincronización automática al reconectar.
+* **⚡ Monitoreo en Tiempo Real (WebSockets):** Actualización instantánea de salidas y novedades en el panel central.
+* **🔒 Seguridad:** Control de roles (administradores, despachadores, conductores) mediante middlewares de Laravel (CSRF, XSS).
+* **🔔 Notificaciones:** Alertas automatizadas para seguimiento de unidades.
 
----
+#### 📐 Diagrama de Casos de Uso
 
-## 📈 Características y Funcionalidades Principales
+ 
 
-*   **📍 Control por Geolocalización:** Gestión y auditoría de rutas mediante la verificación de unidades en coordenadas y puntos de control previamente establecidos.
-*   **🔒 Seguridad y Roles:** Autenticación robusta y protección de endpoints mediante middlewares nativos contra vulnerabilidades web comunes (CSRF, XSS, inyecciones SQL).
-*   **📊 Migraciones Modulares:** Estructura de base de datos versionada en código, permitiendo la alteración y adición ágil de columnas y llaves foráneas (`add_column.php`, `add_fk.php`).
-*   **🔔 Sistema de Notificaciones Operativas:** Lógica interna optimizada para el procesamiento y corrección de alertas operativas dentro de los grupos de transporte.
+#### 📁 Estructura del Repositorio
 
----
+* app/Http/Controllers/ — Lógica de control y sincronización de rutas.
+* app/Models/ — Modelos Eloquent y relaciones.
+* routes/ — Rutas web y endpoints API.
+* database/migrations/ — Esquema de tablas y puntos de control.
+* resources/ — Vistas Blade, TypeScript/PWA y estilos Tailwind.
 
-## 📁 Guía de Estructura del Repositorio
+#### ⚙️ Instalación Local
 
-Para facilitar la auditoría técnica del código, los componentes principales se distribuyen de la siguiente manera:
+bash
 
-*   📂 `/app/Http/Controllers`: Contiene la lógica y el comportamiento de los endpoints y controladores del sistema.
-*   📂 `/app/Models`: Definición de las entidades relacionales y las conexiones de la base de datos.
-*   📂 `/routes`: Definición y enrutamiento limpio de los componentes de la plataforma (`web.php`, `api.php`).
-*   📂 `/database/migrations`: Scripts SQL automatizados para el despliegue ordenado de las tablas del sistema.
-*   📂 `/resources`: Vistas interactivas, componentes Blade y archivos de estilo CSS.
+git clone https://github.com/AlexNxx04/sistema_antoniopolo.git
+cd sistema_antoniopolo
+composer install && npm install
+cp .env.example .env && php artisan key:generate
+php artisan migrate
+npm run build && php artisan serve
